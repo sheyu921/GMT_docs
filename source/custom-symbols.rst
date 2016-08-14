@@ -8,9 +8,7 @@ GMT的 ``psxy`` 模块可以绘制多种符号，比如圆、三角形、五角�
 
 想要用 ``psxy`` 绘制自定义的符号，首先要为该符号创建一个定义文件 ``<symbolname>.def`` 。GMT中内置了若干个预定义的符号。
 
-.. _Custom_symbols:
-
-.. figure:: /_images/GMT_App_N_1.*
+.. figure:: /images/GMT_App_N_1.*
    :width: 500 px
    :align: center
 
@@ -21,24 +19,16 @@ GMT的 ``psxy`` 模块可以绘制多种符号，比如圆、三角形、五角�
 宏语言
 ------
 
-为了自定义一个符号，用户需要自己创建相应的 ``.def`` 文件。
+为了自定义一个符号，用户需要自己创建相应的 ``.def`` 文件。你可以将 ``.def`` 文件放在当前目录或者 ``~/.gmt`` 目录下。
 
-This section defines the language used to build custom
-symbols. You can place these definition files in your current directory
-or your .gmt user directory. When designing the symbol, you are doing so
-in a relative coordinate system centered on (0,0). This point will be
-mapped to the actual location specified by your data coordinates.
-Furthermore, your symbol should be constructed within the domain
-:math:`{-\frac{1}{2},+\frac{1}{2},-\frac{1}{2},+\frac{1}{2}}`, resulting
-in a 1 by 1 relative canvas area. This 1 x 1 square will be scaled to your
-actual symbol size when plotted.
+在设计符号时，使用的是中心位于 (0,0) 处的相对坐标系，该坐标系的中心将放在你所指定的数据坐标处。符号的大小限制在坐标范围 :math:`{-\frac{1}{2},+\frac{1}{2},-\frac{1}{2},+\frac{1}{2}}` 内，最终生成一个 1x1 大小的符号。绘图时会根据选择中指定的符号大小对这个 1x1 的正方形进行缩放。
+
+下面介绍定义符号的宏语言的语法。
 
 注释行
 ~~~~~~
 
-Your definition file may have any number of comment lines, defined to
-begin with the character #. These are skipped by GMT but provides a
-mechanism for you to clarify what your symbol does.
+符号定义文件中可以有任意多个以 ``#`` 开头的注释行。这些注释行会被GMT自动忽略。
 
 符号变量
 ~~~~~~~~
@@ -144,7 +134,7 @@ have specified on the command line. Passing **-G**- or **-W**- means no
 fill or outline, respectively.
 
 符号替换
-~~~~~~~
+~~~~~~~~
 
 Custom symbols that need to plot any of the standard geometric symbols
 (i.e., those controlled by a single size) can make the symbol code a variable.  By specifying **?** instead
@@ -171,7 +161,7 @@ unless you append the modifiers **+X** (longitude via :ref:`FORMAT_GEO_MAP <FORM
 :ref:`FORMAT_DATE_MAP <FORMAT_DATE_MAP>` and :ref:`FORMAT_CLOCK_MAP <FORMAT_CLOCK_MAP>`.
 
 文本对齐方式与字体属性
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 Like the **Sl** symbol in :doc:`psxy`, you can change the current
 font by appending to **l** the modifier **+f**\ *font* [FONT_ANNOT_PRIMARY] and change the text justification

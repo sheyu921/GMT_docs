@@ -17,3 +17,4 @@
    embellishments
    cmd-history
    special-dirs
+   custom-symbols
