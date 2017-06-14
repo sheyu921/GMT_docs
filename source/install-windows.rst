@@ -77,4 +77,5 @@ GMT 为 Windows 用户提供了安装包，可以直接安装使用。Windows �
 Bash on Ubuntu on Windows
 -------------------------
 
-欢迎补充
+经过测试可以使用https://github.com/gmt-china/gmt-easy-installer提供的脚本在Ubuntu on Windows10上成功安装GMT5.4.1，
+安装完毕后关闭Bash窗口再次打开即可正常使用GMT，亦可进行支持中文修改。
